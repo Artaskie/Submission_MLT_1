@@ -153,9 +153,9 @@ Pada proyek ini, karena permasalahan yang dihadapi adalah prediksi nilai kelangs
    
    Root Mean Squared Error (RMSE) mengukur seberapa besar rata-rata kesalahan prediksi yang dihasilkan model, dengan penalti lebih besar untuk kesalahan yang besar, karena kesalahan di kuadratkan sebelum dirata-ratakan. RMSE dihitung menggunakan formula berikut :
 
-$\text{RMSE} = \sqrt{ \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2 }$
+   $\text{RMSE} = \sqrt{ \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2 }$
 
-Nilai RMSE yang semakin kecil menunjukkan performa model yang semakin baik.
+   Nilai RMSE yang semakin kecil menunjukkan performa model yang semakin baik.
 
 2. Mean Absolute Error (MAE)
    Mean Absolute Error (MAE) menghitung rata-rata dari seluruh selisih absolut antara nilai aktual dan nilai prediksi. MAE menggunakan rumus berikut.
@@ -164,7 +164,7 @@ Nilai RMSE yang semakin kecil menunjukkan performa model yang semakin baik.
 
    MAE dianggap lebih robust terhadap outlier dibandingkan RMSE. Sama seperti RMSE, semakin kecil nilai MAE, semakin baik performa model dalam menghasilkan prediksi yang akurat.
 
-4. R² Score
+3. R² Score
 
    R² Score atau koefisien determinasi mengukur seberapa banyak variansi dalam target (Survival Months) yang bisa dijelaskan oleh fitur-fitur prediktor.
 
@@ -174,7 +174,11 @@ Nilai RMSE yang semakin kecil menunjukkan performa model yang semakin baik.
 ### Hasil Proyek Berdasarkan Metrik Evaluasi
 Evaluasi dilakukan pada tiga model: Random Forest Regressor, Linear Regression, dan K-Nearest Neighbors (KNN) Regressor. Berikut ringkasan hasilnya:
 
-
+| Model | Train RMSE | Test RMSE | Train MAE | Test MAE | Train R² | Test R² |
+| ------ | ---------- | --------- | --------- | -------- | -------- | ------- |
+| Random Forest (RF) | 18.90 | 19.98 | 15.80 | 16.29 | 0.228 | 0.129 |
+| Linear Regression (LR) | 19.56 | 20.07 | 16.28 | 16.41 | 0.174 | 0.120 |
+| K-Nearest Neighbors (KNN) | 19.24 | 21.67 | 15.78 | 17.63 | 0.200 | -0.026 |
 
    Hasil evaluasi menunjukkan bahwa Random Forest Regressor memiliki performa terbaik dibandingkan dengan Linear Regression dan K-Nearest Neighbors (KNN) Regressor. Random Forest menghasilkan nilai Test RMSE sebesar 19.98, Test MAE sebesar 16.29, dan Test R² sebesar 0.1286. Nilai RMSE dan MAE yang lebih kecil menunjukkan bahwa prediksi Random Forest lebih mendekati nilai aktual dibandingkan model lainnya. Sedangkan nilai R² yang lebih tinggi menunjukkan bahwa model ini sedikit lebih mampu menjelaskan variabilitas data dibandingkan model Linear Regression dan KNN. Sebaliknya, model KNN menunjukkan performa terburuk dengan nilai Test R² negatif, yang berarti KNN bahkan lebih buruk dibandingkan hanya memprediksi rata-rata Survival Months.
    
