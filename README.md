@@ -80,11 +80,16 @@ Variabel-variabel dalam dataset Breast Cancer adalah sebagai berikut:
 - Status : Status pasien.
 ### Exploratory Data Analysis (EDA)
 Untuk memahami struktur dan distribusi data lebih baik, beberapa tahapan eksplorasi dilakukan, antara lain:
-1. Cek informasi umum dataset:
+1. Cek informasi umum dataset
    - Total baris dan kolom.
    - Tipe data masing-masing kolom (object, int, float).
 2. Distribusi Target (Survival Months)
    Visualisasi histogram ini digunakan untuk melihat apakah distribusinya normal atau skewed. Berikut merupakan visualisasinya.
-   ![Image](https://github.com/user-attachments/assets/f2369d60-75be-43a2-b0c1-7a1027d07a69)
    
+   ![Image](https://github.com/user-attachments/assets/f2369d60-75be-43a2-b0c1-7a1027d07a69)
+
+   Distribusi data Survival Months dalam dataset ini bersifat tiidak simetris, di mana frekuensi bersifat kumulatif dalam nilai Survival Months yang relatif tinggi, yaitu antara 60 dan 100 bulan. Namun relatif lebih rendah dalam nilai yang relatif lebih rendah, yaitu antara 0 hingga 40 bulan. Sesuai pola ini, dapat dinyatakan bahwa distribusi Survival Months termasuk dalam kategori left-skewed (negatively skewed), meskipun jumlah kemiringannya tidak tinggi sama sekali. Distribusi left-skewed ini menandakan bahwa sebagian besar pasien memiliki waktu bertahan hidup yang cukup lama, dan ekor distribusi meluas ke nilai yang lebih kecil.
+4. Cek missing values
+   Berdasarkan pengerjaannya, diperoleh bahwa dataset Breast Cancer tidak ada missing value.
+5. Boxplot fitur numerik
    
