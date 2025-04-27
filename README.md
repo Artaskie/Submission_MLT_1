@@ -2,9 +2,12 @@
 
 ## Domain Proyek
 
-Kemajuan teknologi terkini berdampak pada berbagai bidang, seperti bidang kesehatan. Salah satu teknologi yang paling canggih adalah Machine Learning, yang merupakan cabang kecerdasan buatan yang menghasilkan algoritma untuk prediksi, pengenalan pola, dan klasifikasi data. Dalam bidang kesehatan, Machine Learning berpotensi membantu dokter memprediksi atau mendiagnosis penyakit lebih awal, sehingga tindakan medis dapat dilakukan lebih awal dan lebih berhasil. 
+Kemajuan teknologi terkini berdampak pada berbagai bidang, seperti bidang kesehatan. Salah satu teknologi yang paling canggih adalah Machine Learning, yang merupakan cabang kecerdasan buatan yang menghasilkan algoritma untuk prediksi, pengenalan pola, dan klasifikasi data. Dalam bidang kesehatan, Machine Learning berpotensi membantu dokter memprediksi atau mendiagnosis penyakit lebih awal, sehingga tindakan medis dapat dilakukan lebih awal dan lebih berhasil.
+
 Salah satu penyakit yang tengah menjadi sorotan adalah kanker payudara, yang merupakan penyakit yang mengancam jiwa dan rentan menyerang kaum wanita saat usianya bertambah. Berdasarkan statistik Global Cancer Observatory dari World Health Organization (WHO), pada tahun 2020 kanker payudara dilaporkan sebagai kanker terbanyak di Indonesia, dengan jumlah penderita mencapai 65.858 kasus atau 30,8% dari seluruh kanker. Tingginya angka ini banyak disebabkan oleh keterlambatan diagnosis dini, sehingga penting untuk menemukan solusi berbasis teknologi untuk mendeteksi penyakit ini sedini mungkin.
+
 Penelitian Majid dan Nawangsih (2024) menunjukkan bahwa penerapan algoritma Machine Learning seperti Decision Tree, Naïve Bayes, dan K-Nearest Neighbor (KNN), khususnya jika dipadukan dengan teknik ensemble learning seperti AdaBoost dan Bagging, dapat membantu meningkatkan akurasi prediksi kanker payudara secara signifikan. Pada penelitian tersebut, teknik ensemble menghasilkan akurasi tertinggi, yaitu Decision Tree + Bagging menghasilkan akurasi sebesar 82,76%, sedangkan KNN + Bagging menghasilkan nilai AUC sebesar 0,950 yang tergolong sangat baik.
+
 Berdasarkan hasil penelitian tersebut, dapat disimpulkan bahwa penerapan metode Machine Learning khususnya dengan pendekatan ensemble merupakan solusi potensial untuk meningkatkan akurasi diagnosis dini kanker payudara. Oleh karena itu, pengembangan sistem prediksi kanker payudara berbasis Machine Learning harus menjadi fokus untuk mencegah kematian akibat keterlambatan diagnosis.
 [Perbandingan Metode Ensemble Untuk Meningkatkan Akurasi Algoritma Machine Learning Dalam Memprediksi Penyakit Breast Cancer (Kanker Payudara)]([https://scholar.google.com/](https://ojs.trigunadharma.ac.id/index.php/jis/index))
 
@@ -55,3 +58,31 @@ Untuk mencapai tujuan tersebut, proyek ini menetapkan tiga goals utama, yaitu:
   1. Root Mean Squared Error (RMSE)
   2. Mean Absolute Error (MAE)
   3. R² Score
+## Data Understanding
+Pada proyek ini, digunakan dataset Breast Cancer yang bersumber dari Kaggle. Dataset ini dapat diunduh melalui tautan berikut: https://www.kaggle.com/datasets/reihanenamdari/breast-cancer . Dataset ini berisi data klinis pasien kanker payudara, yang datanya dapat digunakan untuk memprediksi beberapa status kesehatan pasien, termasuk tingkat kelangsungan hidup. Ada satu pasien per baris dalam kumpulan data ini, dan fitur klinis yang berlaku untuk tujuan prediktif diberikan. Dataset ini berisi 16 fitur (kolom) seperti informasi demografi, status hormon, stadium kanker, dan ukuran tumor.
+### Variabel-variabel dalam dataset Breast Cancer adalah sebagai berikut:
+Variabel-variabel dalam dataset Breast Cancer adalah sebagai berikut:
+- Age : Usia pasien saat diagnosis.
+- Race : Ras pasien.
+- Marital Status : Status pernikahan pasien.
+- T Stage : Stadium tumor berdasarkan ukuran dan penyebaran.
+- N Stage : Stadium nodus limfa.
+- 6th Stage : Stadium klinis berdasarkan sistem TNM edisi ke-6.
+- differentiate : Tingkat diferensiasi sel kanker.
+- Grade : Tingkat keganasan tumor.
+- A Stage : Stadium akhir kanker pasien.
+- Tumor Size : Ukuran tumor dalam milimeter.
+- Estrogen Status : Status reseptor estrogen.
+- Progesterone Status : Status reseptor progesteron.
+- Regional Node Examined : Jumlah kelenjar getah bening regional yang diperiksa.
+- Regional Node Positive : Jumlah kelenjar getah bening yang positif kanker.
+- Survival Months : Lama kelangsungan hidup pasien dalam bulan.
+- Status : Status pasien.
+### Exploratory Data Analysis (EDA)
+Untuk memahami struktur dan distribusi data lebih baik, beberapa tahapan eksplorasi dilakukan, antara lain:
+1. Cek informasi umum dataset:
+   - Total baris dan kolom.
+   - Tipe data masing-masing kolom (object, int, float).
+2. Distribusi Target (Survival Months)
+   Visualisasi histogram ini digunakan untuk melihat apakah distribusinya normal atau skewed. Berikut merupakan visualisasinya.
+   
