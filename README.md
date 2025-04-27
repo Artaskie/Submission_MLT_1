@@ -9,6 +9,7 @@ Salah satu penyakit yang tengah menjadi sorotan adalah kanker payudara, yang mer
 Penelitian Majid dan Nawangsih (2024) menunjukkan bahwa penerapan algoritma Machine Learning seperti Decision Tree, Naïve Bayes, dan K-Nearest Neighbor (KNN), khususnya jika dipadukan dengan teknik ensemble learning seperti AdaBoost dan Bagging, dapat membantu meningkatkan akurasi prediksi kanker payudara secara signifikan. Pada penelitian tersebut, teknik ensemble menghasilkan akurasi tertinggi, yaitu Decision Tree + Bagging menghasilkan akurasi sebesar 82,76%, sedangkan KNN + Bagging menghasilkan nilai AUC sebesar 0,950 yang tergolong sangat baik.
 
 Berdasarkan hasil penelitian tersebut, dapat disimpulkan bahwa penerapan metode Machine Learning khususnya dengan pendekatan ensemble merupakan solusi potensial untuk meningkatkan akurasi diagnosis dini kanker payudara. Oleh karena itu, pengembangan sistem prediksi kanker payudara berbasis Machine Learning harus menjadi fokus untuk mencegah kematian akibat keterlambatan diagnosis.
+
 [Perbandingan Metode Ensemble Untuk Meningkatkan Akurasi Algoritma Machine Learning Dalam Memprediksi Penyakit Breast Cancer (Kanker Payudara)]([https://scholar.google.com/](https://ojs.trigunadharma.ac.id/index.php/jis/index))
 
 ## Business Understanding
