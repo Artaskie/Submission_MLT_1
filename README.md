@@ -33,3 +33,25 @@ Untuk mencapai tujuan tersebut, proyek ini menetapkan tiga goals utama, yaitu:
   1. Root Mean Squared Error (RMSE)
   2. Mean Absolute Error (MAE)
   3. R² Score
+#### Solution 2: Linear Regression
+- Deskripsi:
+  Linear Regression digunakan sebagai baseline model untuk membandingkan performansi model lain. Linear Regression sederhana namun efektif dalam memodelkan hubungan linear antar fitur.
+- Langkah-langkah:
+  1. Preprocessing fitur numerik (scaling jika diperlukan).
+  2. Training model Linear Regression.
+  3. Evaluasi performa di data training dan testing.
+- Metrik Evaluasi:
+  1. Root Mean Squared Error (RMSE)
+  2. Mean Absolute Error (MAE)
+  3. R² Score
+#### Solution 3: K-Nearest Neighbors (KNN) Regressor
+- Deskripsi:
+  KNN digunakan untuk memanfaatkan kemiripan lokal antar data. Karena KNN sensitif terhadap skala, fitur numerik perlu distandarisasi.
+- Langkah-langkah:
+  1. Standardisasi fitur numerik menggunakan StandardScaler.
+  2. Training model KNN dengan pemilihan jumlah tetangga (n_neighbors) yang optimal.
+  3. Evaluasi performa di data training dan testing.
+- Metrik Evaluasi:
+  1. Root Mean Squared Error (RMSE)
+  2. Mean Absolute Error (MAE)
+  3. R² Score
