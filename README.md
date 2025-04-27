@@ -96,12 +96,12 @@ Untuk memahami struktur dan distribusi data lebih baik, beberapa tahapan eksplor
    
 5. Boxplot fitur numerik
 
-Berikut merupakan analisis outlier untuk fitur Age, Tumor Size, Regional Node Examined, Regional Node Positive, dan Survival Months.
+   Berikut merupakan analisis outlier untuk fitur Age, Tumor Size, Regional Node Examined, Regional Node Positive, dan Survival Months.
 
-![Image](https://github.com/user-attachments/assets/ffe4cd15-c125-424c-8137-e80b28b41182)
+   ![Image](https://github.com/user-attachments/assets/ffe4cd15-c125-424c-8137-e80b28b41182)
 
-Berdasarkan gambar boxplot di atas, dapat dilihat bahwa terdapat sejumlah outlier pada beberapa fitur numerik, yaitu pada Tumor Size, Regional Node Examined, Reginol Node Positive, dan Survival Months. Outlier terlihat jelas sebagai titik-titik yang berada di luar batas bawah dan batas atas (whisker) pada masing-masing boxplot. Khususnya pada fitur Tumor Size dan Reginol Node Positive, jumlah outlier tampak cukup banyak, yang menunjukkan adanya pasien dengan ukuran tumor atau jumlah kelenjar getah bening positif yang jauh lebih besar dibandingkan pasien lainnya. Sementara itu, fitur Age relatif lebih stabil dengan sedikit atau hampir tanpa outlier. Untuk menangani outlier yang teridentifikasi tersebut,sintaks penyelesaiannya sebagai berikut.
+   Berdasarkan gambar boxplot di atas, dapat dilihat bahwa terdapat sejumlah outlier pada beberapa fitur numerik, yaitu pada Tumor Size, Regional Node Examined, Reginol Node Positive, dan Survival Months. Outlier terlihat jelas sebagai titik-titik yang berada di luar batas bawah dan batas atas (whisker) pada masing-masing boxplot. Khususnya pada fitur Tumor Size dan Reginol Node Positive, jumlah outlier tampak cukup banyak, yang menunjukkan adanya pasien dengan ukuran tumor atau jumlah kelenjar getah bening positif yang jauh lebih besar dibandingkan pasien lainnya. Sementara itu, fitur Age relatif lebih stabil dengan sedikit atau hampir tanpa outlier. Untuk menangani outlier yang teridentifikasi tersebut,sintaks penyelesaiannya sebagai berikut.
 
-<img width="357" alt="Image" src="https://github.com/user-attachments/assets/08e61e0e-ebdf-4da2-9dea-7c4131267e07" />
+   <img width="357" alt="Image" src="https://github.com/user-attachments/assets/08e61e0e-ebdf-4da2-9dea-7c4131267e07" />
 
-Dengan menghilangkan outlier menggunakan metode IQR ini, diharapkan distribusi data menjadi lebih representatif dan model prediksi yang dibangun nantinya menjadi lebih stabil serta tidak bias akibat pengaruh nilai ekstrem.
+   Dengan menghilangkan outlier menggunakan metode IQR ini, diharapkan distribusi data menjadi lebih representatif dan model prediksi yang dibangun nantinya menjadi lebih stabil serta tidak bias akibat pengaruh nilai ekstrem.
