@@ -169,8 +169,8 @@ Pada proyek ini, karena permasalahan yang dihadapi adalah prediksi nilai kelangs
 
    R² Score atau koefisien determinasi mengukur seberapa banyak variansi dalam target (Survival Months) yang bisa dijelaskan oleh fitur-fitur prediktor.
 
-   $R^2=1-(∑_(i=1)^n▒(y_i-y ̂_i )^2 )/(∑_(i=1)^n▒(y_i-y ̅ )^2 )$
-
+   $R^2 = 1 - \frac{ \sum_{i=1}^{n} (y_i - \hat{y}_i)^2 }{ \sum_{i=1}^{n} (y_i - \bar{y})^2 }$
+   
    Nilai R² berkisar antara -∞ sampai 1, dengan nilai lebih mendekati 1 menunjukkan model yang lebih baik. R² negatif berarti performa model lebih buruk daripada sekadar memprediksi nilai rata-rata.
 ### Hasil Proyek Berdasarkan Metrik Evaluasi
 Evaluasi dilakukan pada tiga model: Random Forest Regressor, Linear Regression, dan K-Nearest Neighbors (KNN) Regressor. Berikut ringkasan hasilnya:
