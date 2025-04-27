@@ -105,3 +105,76 @@ Untuk memahami struktur dan distribusi data lebih baik, beberapa tahapan eksplor
    <img width="357" alt="Image" src="https://github.com/user-attachments/assets/08e61e0e-ebdf-4da2-9dea-7c4131267e07" />
 
    Dengan menghilangkan outlier menggunakan metode IQR ini, diharapkan distribusi data menjadi lebih representatif dan model prediksi yang dibangun nantinya menjadi lebih stabil serta tidak bias akibat pengaruh nilai ekstrem.
+
+## Data Preparation
+Pada tahap Data Preparation, dilakukan serangkaian proses untuk mempersiapkan data sebelum digunakan dalam pemodelan Machine Learning. Berikut ini tahapan-tahapan data preparation yang dilakukan secara berurutan.
+1. Encoding Fitur Kategorikal
+
+   Langkah pertama adalah mengubah fitur kategorikal menjadi format numerik menggunakan teknik One-Hot Encoding. Fitur-fitur seperti Race, Marital Status, T Stage, N Stage, 6th Stage, differentiate, Grade, A Stage, Estrogen Status, Progesterone Status, dan Status dikonversi menjadi beberapa kolom baru dengan nilai biner (0 dan 1). One-Hot Encoding diperlukan karena sebagian besar algoritma Machine Learning hanya dapat memproses data numerik. Teknik ini mencegah model salah dalam menginterpretasikan nilai kategorikal yang berbentuk string.
+   Setelah melakukan encoding, fitur-fitur kategorikal asli yang belum diubah dihapus dari dataset menggunakan metode drop(). Hal ini bertujuan untuk menghindari redundansi informasi dan mencegah terjadinya multikolinearitas antar fitur, yang dapat mempengaruhi kualitas dan kestabilan model Machine Learning yang akan dibangun.
+
+2. Splitting Data
+
+   Dataset kemudian dipisahkan menjadi dua bagian utama, yaitu fitur (X) yang berisi seluruh kolom kecuali Survival Months, dan target (y) yang berisi nilai dari Survival Months. Proses ini penting agar model dapat dilatih untuk memprediksi target berdasarkan pola yang ditemukan pada fitur. Selanjutnya, dilakukan pembagian data menggunakan teknik train-test split dengan proporsi 80% untuk training set dan 20% untuk testing set. Penggunaan random_state memastikan pembagian data dilakukan secara acak namun tetap dapat direproduksi. Pembagian ini penting untuk mengevaluasi kemampuan model dalam melakukan prediksi terhadap data yang belum pernah dilihat sebelumnya. 
+
+3. Standardisasi Fitur Numerik
+
+   Fitur numerik seperti Age, Tumor Size, Regional Node Examined, dan Regional Node Positive distandarisasi menggunakan teknik StandardScaler dari pustaka sklearn.preprocessing. Standardisasi ini mengubah distribusi data agar memiliki nilai rata-rata (mean) sebesar 0 dan standar deviasi sebesar 1. Proses ini sangat penting terutama untuk algoritma seperti K-Nearest Neighbor (KNN) dan Linear Regression yang sangat sensitif terhadap skala data, sehingga semua fitur memiliki kontribusi yang seimbang dalam proses pembelajaran.
+
+4. Melihat Statistik Deskriptif Fitur Numerik
+
+   Tahapan terakhir dalam data preparation adalah menampilkan statistik deskriptif untuk fitur numerik menggunakan fungsi describe(). Dengan melihat nilai minimum, maksimum, mean, dan standar deviasi dari fitur yang telah diproses, dapat dipastikan bahwa standardisasi sudah berjalan dengan baik dan tidak terdapat anomali pada distribusi data.
+
+## Modelling
+Pada tahap ini, dilakukan pengembangan berbagai model Machine Learning untuk menyelesaikan permasalahan prediksi kelangsungan hidup pasien kanker (Survival Months). Proses model development meliputi pemilihan algoritma, training model, serta evaluasi awal menggunakan metrik Mean Squared Error (MSE). Beberapa model yang digunakan adalah Random Forest Regressor dengan hyperparameter tuning (Grid Search), Linear Regression, dan K-Nearest Neighbors (KNN) Regressor.
+1. Menyiapkan Dataframe untuk Analisis Model
+
+   Langkah pertama dalam pengembangan model adalah menyiapkan sebuah DataFrame bernama models dengan index 'train_mse' dan 'test_mse', serta kolom untuk setiap algoritma yang diuji. Tujuannya adalah untuk menyimpan dan membandingkan nilai Mean Squared Error (MSE) dari masing-masing model secara terstruktur. Dengan menggunakan struktur ini, proses analisis performa model menjadi lebih mudah dan sistematis.
+
+2. Random Forest Regressor dengan hyperparameter tuning (Grid Search)
+
+   Model pertama yang dikembangkan adalah Random Forest Regressor. Model ini dibuat menggunakan pustaka sklearn.ensemble dan dituning menggunakan Grid Search dengan 5-fold cross-validation untuk mencari kombinasi hyperparameter terbaik. Parameter yang dicoba meliputi n_estimators (jumlah pohon) sebesar 50, 100, dan 150; max_depth (kedalaman maksimum pohon) sebesar 5, 10, dan 20; serta min_samples_split sebesar 2, 5, dan 10. Teknik Grid Search digunakan untuk meminimalkan risiko overfitting sekaligus menemukan konfigurasi model paling optimal. Random Forest memiliki keunggulan dalam menangani hubungan non-linear antar fitur dan cukup tahan terhadap overfitting. Namun, kekurangannya adalah model ini lebih kompleks dan interpretasinya lebih sulit dibandingkan model sederhana seperti Linear Regression.
+
+3. Linear Regression
+
+   Model kedua yang digunakan adalah Linear Regression, dibangun menggunakan pustaka sklearn.linear_model. Model ini dilatih pada data training tanpa melakukan hyperparameter tuning tambahan. Linear Regression sangat populer karena kesederhanaannya, kecepatan pelatihan yang tinggi, serta kemudahan dalam interpretasi koefisien model. Model ini cocok ketika hubungan antar variabel cenderung linear. Meskipun begitu, Linear Regression memiliki keterbatasan dalam menangkap hubungan non-linear antar fitur dan cukup sensitif terhadap adanya outlier di dalam data.
+
+4. K-Nearest Neighbors (KNN) Regressor
+
+   Model ketiga yang dikembangkan adalah K-Nearest Neighbors (KNN) Regressor dengan nilai n_neighbors=10. Model ini menggunakan pendekatan berbasis kedekatan jarak antar data untuk melakukan prediksi. KNN sangat fleksibel dalam menangkap pola lokal yang kompleks tanpa perlu asumsi bentuk hubungan antar variabel. Namun, kekurangan dari KNN adalah sensitivitas yang tinggi terhadap skala fitur, sehingga standardisasi data menjadi sangat penting. Selain itu, performa prediksi KNN cenderung lambat pada dataset yang besar karena perhitungan jarak yang dilakukan ke seluruh data training untuk setiap prediksi.
+
+Setelah seluruh model dibangun dan dilatih, performa awal masing-masing model diukur menggunakan metrik Mean Squared Error (MSE) pada data training. Model yang dipilih sebagai model terbaik adalah Random Forest Regressor. Pemilihan ini didasarkan pada fleksibilitas Random Forest dalam menangani kompleksitas data, kemampuannya memodelkan hubungan non-linear, serta performa akurasi yang lebih tinggi dibandingkan Linear Regression maupun KNN. Dengan tambahan tuning hyperparameter melalui Grid Search, Random Forest mampu mengurangi risiko overfitting sehingga lebih stabil ketika digunakan untuk memprediksi data baru.
+
+## Evaluasi
+Pada proyek ini, karena permasalahan yang dihadapi adalah prediksi nilai kelangsungan hidup pasien kanker payudara dalam bulan, maka digunakan metrik evaluasi untuk regresi. Metrik evaluasi yang digunakan adalah Root Mean Squared Error (RMSE), Mean Absolute Error (MAE), dan R² Score.
+
+### Penjelasan Metrik Evaluasi
+1. Root Mean Squared Error (RMSE)
+   
+   Root Mean Squared Error (RMSE) mengukur seberapa besar rata-rata kesalahan prediksi yang dihasilkan model, dengan penalti lebih besar untuk kesalahan yang besar, karena kesalahan di kuadratkan sebelum dirata-ratakan. RMSE dihitung menggunakan formula berikut :
+
+
+
+   Nilai RMSE yang semakin kecil menunjukkan performa model yang semakin baik.
+
+2. Mean Absolute Error (MAE)
+   Mean Absolute Error (MAE) menghitung rata-rata dari seluruh selisih absolut antara nilai aktual dan nilai prediksi. MAE menggunakan rumus berikut.
+
+
+
+   MAE dianggap lebih robust terhadap outlier dibandingkan RMSE. Sama seperti RMSE, semakin kecil nilai MAE, semakin baik performa model dalam menghasilkan prediksi yang akurat.
+
+3. R² Score
+
+   R² Score atau koefisien determinasi mengukur seberapa banyak variansi dalam target (Survival Months) yang bisa dijelaskan oleh fitur-fitur prediktor.
+
+
+
+   Nilai R² berkisar antara -∞ sampai 1, dengan nilai lebih mendekati 1 menunjukkan model yang lebih baik. R² negatif berarti performa model lebih buruk daripada sekadar memprediksi nilai rata-rata.
+### Hasil Proyek Berdasarkan Metrik Evaluasi
+Evaluasi dilakukan pada tiga model: Random Forest Regressor, Linear Regression, dan K-Nearest Neighbors (KNN) Regressor. Berikut ringkasan hasilnya:
+
+
+
+   Hasil evaluasi menunjukkan bahwa Random Forest Regressor memiliki performa terbaik dibandingkan dengan Linear Regression dan K-Nearest Neighbors (KNN) Regressor. Random Forest menghasilkan nilai Test RMSE sebesar 19.98, Test MAE sebesar 16.29, dan Test R² sebesar 0.1286. Nilai RMSE dan MAE yang lebih kecil menunjukkan bahwa prediksi Random Forest lebih mendekati nilai aktual dibandingkan model lainnya. Sedangkan nilai R² yang lebih tinggi menunjukkan bahwa model ini sedikit lebih mampu menjelaskan variabilitas data dibandingkan model Linear Regression dan KNN. Sebaliknya, model KNN menunjukkan performa terburuk dengan nilai Test R² negatif, yang berarti KNN bahkan lebih buruk dibandingkan hanya memprediksi rata-rata Survival Months.
+   
