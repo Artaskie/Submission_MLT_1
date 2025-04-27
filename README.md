@@ -84,12 +84,24 @@ Untuk memahami struktur dan distribusi data lebih baik, beberapa tahapan eksplor
    - Total baris dan kolom.
    - Tipe data masing-masing kolom (object, int, float).
 2. Distribusi Target (Survival Months)
+   
    Visualisasi histogram ini digunakan untuk melihat apakah distribusinya normal atau skewed. Berikut merupakan visualisasinya.
    
    ![Image](https://github.com/user-attachments/assets/f2369d60-75be-43a2-b0c1-7a1027d07a69)
 
    Distribusi data Survival Months dalam dataset ini bersifat tiidak simetris, di mana frekuensi bersifat kumulatif dalam nilai Survival Months yang relatif tinggi, yaitu antara 60 dan 100 bulan. Namun relatif lebih rendah dalam nilai yang relatif lebih rendah, yaitu antara 0 hingga 40 bulan. Sesuai pola ini, dapat dinyatakan bahwa distribusi Survival Months termasuk dalam kategori left-skewed (negatively skewed), meskipun jumlah kemiringannya tidak tinggi sama sekali. Distribusi left-skewed ini menandakan bahwa sebagian besar pasien memiliki waktu bertahan hidup yang cukup lama, dan ekor distribusi meluas ke nilai yang lebih kecil.
 4. Cek missing values
+
    Berdasarkan pengerjaannya, diperoleh bahwa dataset Breast Cancer tidak ada missing value.
-5. Boxplot fitur numerik
    
+5. Boxplot fitur numerik
+
+Berikut merupakan analisis outlier untuk fitur Age, Tumor Size, Regional Node Examined, Regional Node Positive, dan Survival Months.
+
+
+
+Berdasarkan gambar boxplot di atas, dapat dilihat bahwa terdapat sejumlah outlier pada beberapa fitur numerik, yaitu pada Tumor Size, Regional Node Examined, Reginol Node Positive, dan Survival Months. Outlier terlihat jelas sebagai titik-titik yang berada di luar batas bawah dan batas atas (whisker) pada masing-masing boxplot. Khususnya pada fitur Tumor Size dan Reginol Node Positive, jumlah outlier tampak cukup banyak, yang menunjukkan adanya pasien dengan ukuran tumor atau jumlah kelenjar getah bening positif yang jauh lebih besar dibandingkan pasien lainnya. Sementara itu, fitur Age relatif lebih stabil dengan sedikit atau hampir tanpa outlier. Untuk menangani outlier yang teridentifikasi tersebut,sintaks penyelesaiannya sebagai berikut.
+
+
+
+Dengan menghilangkan outlier menggunakan metode IQR ini, diharapkan distribusi data menjadi lebih representatif dan model prediksi yang dibangun nantinya menjadi lebih stabil serta tidak bias akibat pengaruh nilai ekstrem.
