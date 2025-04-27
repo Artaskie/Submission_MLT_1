@@ -85,4 +85,6 @@ Untuk memahami struktur dan distribusi data lebih baik, beberapa tahapan eksplor
    - Tipe data masing-masing kolom (object, int, float).
 2. Distribusi Target (Survival Months)
    Visualisasi histogram ini digunakan untuk melihat apakah distribusinya normal atau skewed. Berikut merupakan visualisasinya.
+   ![Image](https://github.com/user-attachments/assets/f2369d60-75be-43a2-b0c1-7a1027d07a69)
+   
    
