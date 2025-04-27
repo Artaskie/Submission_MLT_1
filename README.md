@@ -153,6 +153,9 @@ Pada proyek ini, karena permasalahan yang dihadapi adalah prediksi nilai kelangs
    
    Root Mean Squared Error (RMSE) mengukur seberapa besar rata-rata kesalahan prediksi yang dihasilkan model, dengan penalti lebih besar untuk kesalahan yang besar, karena kesalahan di kuadratkan sebelum dirata-ratakan. RMSE dihitung menggunakan formula berikut :
 
+\[
+\text{RMSE} = \sqrt{ \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2 }
+\]
 
 
    Nilai RMSE yang semakin kecil menunjukkan performa model yang semakin baik.
