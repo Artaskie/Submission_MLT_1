@@ -11,6 +11,7 @@ Penelitian Majid dan Nawangsih (2024) menunjukkan bahwa penerapan algoritma Mach
 Berdasarkan hasil penelitian tersebut, dapat disimpulkan bahwa penerapan metode Machine Learning khususnya dengan pendekatan ensemble merupakan solusi potensial untuk meningkatkan akurasi diagnosis dini kanker payudara. Oleh karena itu, pengembangan sistem prediksi kanker payudara berbasis Machine Learning harus menjadi fokus untuk mencegah kematian akibat keterlambatan diagnosis.
 
 **Daftar Pustaka**
+
 Majid, A. M., dan Nawangsih, I. (2024). Perbandingan Metode Ensemble Untuk Meningkatkan Akurasi Algoritma Machine Learning Dalam Memprediksi Penyakit Breast Cancer (Kanker Payudara). _Jurnal SAINTIKOM_, 23(1), 97–104. https://doi.org/10.29313/jrs.v1i1.16
 
 ## Business Understanding
