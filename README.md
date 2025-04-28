@@ -10,10 +10,6 @@ Penelitian Majid dan Nawangsih (2024) menunjukkan bahwa penerapan algoritma Mach
 
 Berdasarkan hasil penelitian tersebut, dapat disimpulkan bahwa penerapan metode Machine Learning khususnya dengan pendekatan ensemble merupakan solusi potensial untuk meningkatkan akurasi diagnosis dini kanker payudara. Oleh karena itu, pengembangan sistem prediksi kanker payudara berbasis Machine Learning harus menjadi fokus untuk mencegah kematian akibat keterlambatan diagnosis.
 
-**Daftar Pustaka**
-
-Majid, A. M., dan Nawangsih, I. (2024). Perbandingan Metode Ensemble Untuk Meningkatkan Akurasi Algoritma Machine Learning Dalam Memprediksi Penyakit Breast Cancer (Kanker Payudara). _Jurnal SAINTIKOM_, 23(1), 97–104. https://doi.org/10.29313/jrs.v1i1.16
-
 ## Business Understanding
 
 Dalam era perkembangan teknologi yang semakin pesat, pemanfaatan Machine Learning di bidang kesehatan menjadi salah satu inovasi penting untuk meningkatkan kualitas layanan medis. Salah satu tantangan besar dalam bidang ini adalah bagaimana mendeteksi dan memprediksi penyakit secara lebih dini dan akurat, guna meningkatkan tingkat kesembuhan pasien. Kanker, khususnya kanker payudara, merupakan salah satu penyakit dengan tingkat kematian tinggi yang membutuhkan perhatian serius dalam upaya diagnosis dini dan prediksi kelangsungan hidup pasien.
@@ -185,3 +181,6 @@ Evaluasi dilakukan pada tiga model: Random Forest Regressor, Linear Regression, 
 
    Hasil evaluasi menunjukkan bahwa Random Forest Regressor memiliki performa terbaik dibandingkan dengan Linear Regression dan K-Nearest Neighbors (KNN) Regressor. Random Forest menghasilkan nilai Test RMSE sebesar 19.98, Test MAE sebesar 16.29, dan Test R² sebesar 0.1286. Nilai RMSE dan MAE yang lebih kecil menunjukkan bahwa prediksi Random Forest lebih mendekati nilai aktual dibandingkan model lainnya. Sedangkan nilai R² yang lebih tinggi menunjukkan bahwa model ini sedikit lebih mampu menjelaskan variabilitas data dibandingkan model Linear Regression dan KNN. Sebaliknya, model KNN menunjukkan performa terburuk dengan nilai Test R² negatif, yang berarti KNN bahkan lebih buruk dibandingkan hanya memprediksi rata-rata Survival Months.
    
+## Daftar Pustaka
+
+Majid, A. M., dan Nawangsih, I. (2024). Perbandingan Metode Ensemble Untuk Meningkatkan Akurasi Algoritma Machine Learning Dalam Memprediksi Penyakit Breast Cancer (Kanker Payudara). _Jurnal SAINTIKOM_, 23(1), 97–104. https://doi.org/10.29313/jrs.v1i1.16
