@@ -81,7 +81,9 @@ Variabel-variabel dalam dataset Breast Cancer adalah sebagai berikut:
 Untuk memahami struktur dan distribusi data lebih baik, beberapa tahapan eksplorasi dilakukan, antara lain:
 1. Cek informasi umum dataset
    - Total baris dan kolom.
+     Diperoleh terdapat 4024 baris dan 16 kolom pada dataset yang digunakan. 
    - Tipe data masing-masing kolom (object, int, float).
+     Berikut merupakan tipe tipe data yang digunakan pada masing-masing kolom: 
 2. Distribusi Target (Survival Months)
    
    Visualisasi histogram ini digunakan untuk melihat apakah distribusinya normal atau skewed. Berikut merupakan visualisasinya.
