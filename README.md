@@ -58,7 +58,7 @@ Untuk mencapai tujuan tersebut, proyek ini menetapkan tiga goals utama, yaitu:
   2. Mean Absolute Error (MAE)
   3. R² Score
 ## Data Understanding
-Pada proyek ini, digunakan dataset Breast Cancer yang bersumber dari Kaggle. Dataset ini dapat diunduh melalui tautan berikut: https://www.kaggle.com/datasets/reihanenamdari/breast-cancer . Dataset ini berisi data klinis pasien kanker payudara, yang datanya dapat digunakan untuk memprediksi beberapa status kesehatan pasien, termasuk tingkat kelangsungan hidup. Ada satu pasien per baris dalam kumpulan data ini, dan fitur klinis yang berlaku untuk tujuan prediktif diberikan. Dataset ini berisi 16 fitur (kolom) seperti informasi demografi, status hormon, stadium kanker, dan ukuran tumor.
+Pada proyek ini, digunakan dataset Breast Cancer yang bersumber dari Kaggle. Dataset ini dapat diunduh melalui tautan berikut: https://www.kaggle.com/datasets/reihanenamdari/breast-cancer . Dataset ini berisi data klinis pasien kanker payudara, yang datanya dapat digunakan untuk memprediksi beberapa status kesehatan pasien, termasuk tingkat kelangsungan hidup. Ada satu pasien per baris dalam kumpulan data ini, dan fitur klinis yang berlaku untuk tujuan prediktif diberikan. Dataset ini berisi 16 fitur (kolom) seperti informasi demografi, status hormon, stadium kanker, dan ukuran tumor. Dataset ini juga berisi baris data sebanyak 4024.
 ### Variabel-variabel dalam dataset Breast Cancer adalah sebagai berikut:
 Variabel-variabel dalam dataset Breast Cancer adalah sebagai berikut:
 - Age : Usia pasien saat diagnosis.
