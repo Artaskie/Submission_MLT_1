@@ -192,6 +192,16 @@ Evaluasi dilakukan pada tiga model: Random Forest Regressor, Linear Regression, 
 
    Hasil evaluasi menunjukkan bahwa Random Forest Regressor memiliki performa terbaik dibandingkan dengan Linear Regression dan K-Nearest Neighbors (KNN) Regressor. Random Forest menghasilkan nilai Test RMSE sebesar 19.98, Test MAE sebesar 16.29, dan Test R² sebesar 0.1286. Nilai RMSE dan MAE yang lebih kecil menunjukkan bahwa prediksi Random Forest lebih mendekati nilai aktual dibandingkan model lainnya. Sedangkan nilai R² yang lebih tinggi menunjukkan bahwa model ini sedikit lebih mampu menjelaskan variabilitas data dibandingkan model Linear Regression dan KNN. Sebaliknya, model KNN menunjukkan performa terburuk dengan nilai Test R² negatif, yang berarti KNN bahkan lebih buruk dibandingkan hanya memprediksi rata-rata Survival Months.
    
+## Kesimpulan
+
+Proyek ini berhasil mengembangkan model prediktif berbasis Machine Learning untuk memprediksi waktu bertahan hidup pasien kanker payudara dengan menggunakan berbagai fitur klinis seperti stadium kanker (T/N/6th/A Stage), status hormon (Estrogen & Progesterone), ukuran tumor, dan jumlah kelenjar getah bening yang diperiksa maupun yang positif. Tiga model regresi telah diuji: Random Forest Regressor, Linear Regression, dan K-Nearest Neighbors (KNN) Regressor. Berdasarkan evaluasi performa menggunakan metrik RMSE, MAE, dan R², model Random Forest Regressor dengan Grid Search memberikan hasil terbaik:
+
+1. RMSE test: 19.98
+2. MAE test: 16.29
+3. R² test: 0.129
+
+Meskipun nilai R² masih relatif rendah, model ini memiliki keunggulan dalam menangani data non-linear dan lebih tahan terhadap outlier dibandingkan dua model lainnya. Hal ini menunjukkan bahwa model ini sudah dapat memberikan gambaran awal prediksi kelangsungan hidup pasien dengan akurasi yang lebih baik dibandingkan baseline model, walaupun masih dapat ditingkatkan.
+
 ## Daftar Pustaka
 
 Majid, A. M., dan Nawangsih, I. (2024). Perbandingan Metode Ensemble Untuk Meningkatkan Akurasi Algoritma Machine Learning Dalam Memprediksi Penyakit Breast Cancer (Kanker Payudara). _Jurnal SAINTIKOM_, 23(1), 97–104. https://doi.org/10.29313/jrs.v1i1.16
