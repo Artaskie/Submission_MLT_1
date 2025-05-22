@@ -98,36 +98,40 @@ Untuk memahami struktur dan distribusi data lebih baik, beberapa tahapan eksplor
 
    Berdasarkan pengerjaannya, diperoleh bahwa dataset Breast Cancer tidak ada missing value. Berikut merupakan pengecekannya
 
+   <img width="220" alt="Image" src="https://github.com/user-attachments/assets/93c736c4-bd96-4876-a53d-95e791ba31b9" />
    
-   
-5. Boxplot fitur numerik
+4. Boxplot fitur numerik
 
    Berikut merupakan analisis outlier untuk fitur Age, Tumor Size, Regional Node Examined, Regional Node Positive, dan Survival Months.
 
    ![Image](https://github.com/user-attachments/assets/ffe4cd15-c125-424c-8137-e80b28b41182)
 
-   Berdasarkan gambar boxplot di atas, dapat dilihat bahwa terdapat sejumlah outlier pada beberapa fitur numerik, yaitu pada Tumor Size, Regional Node Examined, Reginol Node Positive, dan Survival Months. Outlier terlihat jelas sebagai titik-titik yang berada di luar batas bawah dan batas atas (whisker) pada masing-masing boxplot. Khususnya pada fitur Tumor Size dan Reginol Node Positive, jumlah outlier tampak cukup banyak, yang menunjukkan adanya pasien dengan ukuran tumor atau jumlah kelenjar getah bening positif yang jauh lebih besar dibandingkan pasien lainnya. Sementara itu, fitur Age relatif lebih stabil dengan sedikit atau hampir tanpa outlier. Untuk menangani outlier yang teridentifikasi tersebut,sintaks penyelesaiannya sebagai berikut.
+   Berdasarkan gambar boxplot di atas, dapat dilihat bahwa terdapat sejumlah outlier pada beberapa fitur numerik, yaitu pada Tumor Size, Regional Node Examined, Reginol Node Positive, dan Survival Months. Outlier terlihat jelas sebagai titik-titik yang berada di luar batas bawah dan batas atas (whisker) pada masing-masing boxplot. Khususnya pada fitur Tumor Size dan Reginol Node Positive, jumlah outlier tampak cukup banyak, yang menunjukkan adanya pasien dengan ukuran tumor atau jumlah kelenjar getah bening positif yang jauh lebih besar dibandingkan pasien lainnya. Sementara itu, fitur Age relatif lebih stabil dengan sedikit atau hampir tanpa outlier.
+## Data Preparation
+Pada tahap Data Preparation, dilakukan serangkaian proses untuk mempersiapkan data sebelum digunakan dalam pemodelan Machine Learning. Berikut ini tahapan-tahapan data preparation yang dilakukan secara berurutan.
+
+1. Menghapus Outlier
+
+   Untuk menangani outlier yang teridentifikasi tersebut,sintaks penyelesaiannya sebagai berikut.
 
    <img width="357" alt="Image" src="https://github.com/user-attachments/assets/08e61e0e-ebdf-4da2-9dea-7c4131267e07" />
 
    Dengan menghilangkan outlier menggunakan metode IQR ini, diharapkan distribusi data menjadi lebih representatif dan model prediksi yang dibangun nantinya menjadi lebih stabil serta tidak bias akibat pengaruh nilai ekstrem.
-
-## Data Preparation
-Pada tahap Data Preparation, dilakukan serangkaian proses untuk mempersiapkan data sebelum digunakan dalam pemodelan Machine Learning. Berikut ini tahapan-tahapan data preparation yang dilakukan secara berurutan.
-1. Encoding Fitur Kategorikal
+   
+2. Encoding Fitur Kategorikal
 
    Langkah pertama adalah mengubah fitur kategorikal menjadi format numerik menggunakan teknik One-Hot Encoding. Fitur-fitur seperti Race, Marital Status, T Stage, N Stage, 6th Stage, differentiate, Grade, A Stage, Estrogen Status, Progesterone Status, dan Status dikonversi menjadi beberapa kolom baru dengan nilai biner (0 dan 1). One-Hot Encoding diperlukan karena sebagian besar algoritma Machine Learning hanya dapat memproses data numerik. Teknik ini mencegah model salah dalam menginterpretasikan nilai kategorikal yang berbentuk string.
    Setelah melakukan encoding, fitur-fitur kategorikal asli yang belum diubah dihapus dari dataset menggunakan metode drop(). Hal ini bertujuan untuk menghindari redundansi informasi dan mencegah terjadinya multikolinearitas antar fitur, yang dapat mempengaruhi kualitas dan kestabilan model Machine Learning yang akan dibangun.
 
-2. Splitting Data
+3. Splitting Data
 
    Dataset kemudian dipisahkan menjadi dua bagian utama, yaitu fitur (X) yang berisi seluruh kolom kecuali Survival Months, dan target (y) yang berisi nilai dari Survival Months. Proses ini penting agar model dapat dilatih untuk memprediksi target berdasarkan pola yang ditemukan pada fitur. Selanjutnya, dilakukan pembagian data menggunakan teknik train-test split dengan proporsi 80% untuk training set dan 20% untuk testing set. Penggunaan random_state memastikan pembagian data dilakukan secara acak namun tetap dapat direproduksi. Pembagian ini penting untuk mengevaluasi kemampuan model dalam melakukan prediksi terhadap data yang belum pernah dilihat sebelumnya. 
 
-3. Standardisasi Fitur Numerik
+4. Standardisasi Fitur Numerik
 
    Fitur numerik seperti Age, Tumor Size, Regional Node Examined, dan Regional Node Positive distandarisasi menggunakan teknik StandardScaler dari pustaka sklearn.preprocessing. Standardisasi ini mengubah distribusi data agar memiliki nilai rata-rata (mean) sebesar 0 dan standar deviasi sebesar 1. Proses ini sangat penting terutama untuk algoritma seperti K-Nearest Neighbor (KNN) dan Linear Regression yang sangat sensitif terhadap skala data, sehingga semua fitur memiliki kontribusi yang seimbang dalam proses pembelajaran.
 
-4. Melihat Statistik Deskriptif Fitur Numerik
+5. Melihat Statistik Deskriptif Fitur Numerik
 
    Tahapan terakhir dalam data preparation adalah menampilkan statistik deskriptif untuk fitur numerik menggunakan fungsi describe(). Dengan melihat nilai minimum, maksimum, mean, dan standar deviasi dari fitur yang telah diproses, dapat dipastikan bahwa standardisasi sudah berjalan dengan baik dan tidak terdapat anomali pada distribusi data.
 
