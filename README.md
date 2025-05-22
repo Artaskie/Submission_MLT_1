@@ -83,7 +83,10 @@ Untuk memahami struktur dan distribusi data lebih baik, beberapa tahapan eksplor
    - Total baris dan kolom.
      Diperoleh terdapat 4024 baris dan 16 kolom pada dataset yang digunakan. 
    - Tipe data masing-masing kolom (object, int, float).
-     Berikut merupakan tipe tipe data yang digunakan pada masing-masing kolom: 
+     Berikut merupakan tipe tipe data yang digunakan pada masing-masing kolom:
+
+      <img width="325" alt="Image" src="https://github.com/user-attachments/assets/2f42ff1c-98a2-42e5-b99f-d467f5236dc4" />
+
 2. Distribusi Target (Survival Months)
    
    Visualisasi histogram ini digunakan untuk melihat apakah distribusinya normal atau skewed. Berikut merupakan visualisasinya.
@@ -91,9 +94,11 @@ Untuk memahami struktur dan distribusi data lebih baik, beberapa tahapan eksplor
    ![Image](https://github.com/user-attachments/assets/f2369d60-75be-43a2-b0c1-7a1027d07a69)
 
    Distribusi data Survival Months dalam dataset ini bersifat tiidak simetris, di mana frekuensi bersifat kumulatif dalam nilai Survival Months yang relatif tinggi, yaitu antara 60 dan 100 bulan. Namun relatif lebih rendah dalam nilai yang relatif lebih rendah, yaitu antara 0 hingga 40 bulan. Sesuai pola ini, dapat dinyatakan bahwa distribusi Survival Months termasuk dalam kategori left-skewed (negatively skewed), meskipun jumlah kemiringannya tidak tinggi sama sekali. Distribusi left-skewed ini menandakan bahwa sebagian besar pasien memiliki waktu bertahan hidup yang cukup lama, dan ekor distribusi meluas ke nilai yang lebih kecil.
-4. Cek missing values
+3. Cek missing values
 
-   Berdasarkan pengerjaannya, diperoleh bahwa dataset Breast Cancer tidak ada missing value.
+   Berdasarkan pengerjaannya, diperoleh bahwa dataset Breast Cancer tidak ada missing value. Berikut merupakan pengecekannya
+
+   
    
 5. Boxplot fitur numerik
 
